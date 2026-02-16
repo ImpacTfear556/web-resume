@@ -1,0 +1,111 @@
+:root{
+  --text:#111;
+  --muted:#555;
+  --rule:#ddd;
+  --accent:#0b5bd3;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background:#f6f7fb;
+  line-height:1.35;
+}
+
+.page{
+  width:min(900px, calc(100% - 32px));
+  margin: 24px auto;
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius: 10px;
+  padding: 28px;
+}
+
+.header{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  justify-content:space-between;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:14px;
+  margin-bottom:18px;
+}
+
+.name{ margin:0; font-size: 30px; letter-spacing: .2px; }
+.contact{ margin:6px 0 0; color: var(--muted); font-size: 14px; }
+a{ color: var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+.actions{ display:flex; gap:10px; }
+.btn{
+  border:1px solid var(--accent);
+  background: var(--accent);
+  color:#fff;
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:14px;
+  cursor:pointer;
+}
+.btn-ghost{
+  background:#fff;
+  color: var(--accent);
+}
+
+.section{ margin: 14px 0; }
+.section-title{
+  margin:0 0 8px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:6px;
+}
+
+.summary{ margin:0; }
+
+.row{
+  display:flex;
+  gap:12px;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-top:10px;
+}
+.item-title{ font-weight:700; }
+.left{ min-width: 65%; }
+.right{ white-space:nowrap; }
+
+.bullets{
+  margin:8px 0 0 18px;
+}
+.bullets li{ margin:4px 0; }
+
+.skills{
+  display:grid;
+  gap:6px;
+}
+.label{ font-weight:700; }
+
+.muted{ color: var(--muted); }
+.small{ font-size: 12px; }
+
+.footer{ margin-top: 18px; border-top:1px solid var(--rule); padding-top:10px; }
+
+/* PRINT MODE: makes it look like a real resume page */
+@media print {
+  body{ background:#fff; }
+  .page{
+    margin:0;
+    border:none;
+    border-radius:0;
+    padding:0;
+    width: 100%;
+  }
+  .no-print{ display:none !important; }
+
+  /* Remove any browser-added headers/footers as much as possible */
+  @page { margin: 0.6in; }
+
+  a{ color:#000; text-decoration:none; }
+}
